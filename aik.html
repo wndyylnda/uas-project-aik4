@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial Shalat Muhammadiyah</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c786c;
+            --secondary: #004445;
+            --accent: #f8b400;
+            --light: #faf5e4;
+            --dark: #1a1a2e;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #faf5e4 0%, #d4e6f1 100%);
+            color: var(--dark);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 0;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+        
+        .content-wrapper {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .steps-container {
+            flex: 1;
+            min-width: 300px;
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .step-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--light);
+        }
+        
+        .step-title {
+            font-size: 1.8rem;
+            color: var(--secondary);
+        }
+        
+        .step-content {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        
+        .step-image {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 3px solid var(--light);
+        }
+        
+        .step-description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            text-align: justify;
+        }
+        
+        .arabic-text {
+            font-size: 1.8rem;
+            text-align: center;
+            margin: 15px 0;
+            color: var(--secondary);
+            font-family: 'Traditional Arabic', 'Amiri', serif;
+        }
+        
+        .translation {
+            font-style: italic;
+            text-align: center;
+            margin-bottom: 15px;
+            color: #555;
+        }
+        
+        .audio-player {
+            width: 100%;
+            margin: 15px 0;
+            background: var(--light);
+            border-radius: 10px;
+            padding: 15px;
+        }
+        
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 25px;
+        }
+        
+        .btn {
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .btn-prev {
+            background: #e0e0e0;
+            color: var(--dark);
+        }
+        
+        .btn-next {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+        
+        .info-panel {
+            flex: 0 0 300px;
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .info-title {
+            font-size: 1.5rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--light);
+        }
+        
+        .info-content {
+            line-height: 1.7;
+        }
+        
+        .info-content p {
+            margin-bottom: 15px;
+        }
+        
+        .steps-list {
+            list-style-type: none;
+            margin-top: 20px;
+        }
+        
+        .steps-list li {
+            padding: 10px 15px;
+            margin-bottom: 10px;
+            background: var(--light);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .steps-list li:hover {
+            background: #e6f7f5;
+        }
+        
+        .steps-list li.active {
+            background: var(--primary);
+            color: white;
+            font-weight: bold;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 40px;
+            color: var(--secondary);
+            font-size: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .content-wrapper {
+                flex-direction: column;
+            }
+            
+            .info-panel {
+                order: -1;
+            }
+            
+            header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .step-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-mosque"></i> Tutorial Shalat Muhammadiyah</h1>
+            <p>Panduan Lengkap Shalat Menurut Tuntunan Muhammadiyah</p>
+        </header>
+        
+        <div class="content-wrapper">
+            <div class="steps-container">
+                <div class="step-header">
+                    <h2 class="step-title">Takbiratul Ihram</h2>
+                </div>
+                
+                <div class="step-content">
+                    <img src="c:\Users\User\Pictures\foto 1.jpg" alt="Takbiratul Ihram" class="step-jpg "style="width: 170px; max-height: 200px;margin: 50px 330px 1px ;">
+                    
+                    <div class="arabic-text">الله أكبر</div>
+                    <div class="translation">Allahu Akbar (Allah Maha Besar)</div>
+                    
+                    <div class="step-description">
+                        <p>Takbiratul ihram adalah gerakan mengangkat kedua tangan sejajar dengan telinga sambil mengucapkan "Allahu Akbar". Ini menandai dimulainya shalat.</p>
+                        <p><strong>Posisi:</strong> Berdiri tegak menghadap kiblat, pandangan lurus ke tempat sujud. Kedua tangan diangkat sejajar dengan bahu atau telinga, jari-jari direnggangkan.</p>
+                        <p><strong>Hukum:</strong> Rukun shalat. Jika ditinggalkan, shalat tidak sah.</p>
+                    </div>
+                    
+                    <div class="audio-player">
+                        <audio controls style="width: 100%;">
+                            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                            Browser Anda tidak mendukung elemen audio.
+                        </audio>
+                    </div>
+                </div>
+                
+                <div class="controls">
+                    <button class="btn btn-prev" disabled><i class="fas fa-arrow-left"></i> Sebelumnya</button>
+                    <button class="btn btn-next">Selanjutnya <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+            
+            <div class="info-panel">
+                <h3 class="info-title">Tentang Shalat Muhammadiyah</h3>
+                <div class="info-content">
+                    <p>Shalat menurut Muhammadiyah mengikuti tuntunan Rasulullah ﷺ berdasarkan dalil-dalil shahih dari Al-Qur'an dan As-Sunnah.</p>
+                    <p><strong>Karakteristik Utama:</strong></p>
+                    <ul>
+                        <li>Mengangkat tangan saat takbir (takbiratul ihram, ruku', dan bangun dari ruku')</li>
+                        <li>Meletakkan tangan di atas dada saat berdiri</li>
+                        <li>Membaca doa iftitah</li>
+                        <li>Membaca ta'awudz sebelum Al-Fatihah</li>
+                        <li>Tidak mengeraskan bacaan amin</li>
+                        <li>Tidak membaca qunut pada shalat Subuh</li>
+                    </ul>
+                    
+                    <h4 class="info-title" style="margin-top: 25px;">Tahapan Shalat</h4>
+                    <ol class="steps-list">
+                        <li class="active">Takbiratul Ihram</li>
+                        <li>Berdiri & Membaca Doa Iftitah</li>
+                        <li>Membaca Al-Fatihah</li>
+                        <li>Membaca Surah Pendek</li>
+                        <li>Ruku'</li>
+                        <li>I'tidal</li>
+                        <li>Sujud</li>
+                        <li>Duduk di Antara Dua Sujud</li>
+                        <li>Sujud Kedua</li>
+                        <li>Tasyahud Awal</li>
+                        <li>Tasyahud Akhir</li>
+                        <li>Salam</li>
+                        <li>Doa Setelah Shalat</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>&copy; 2025 Tutorial Shalat Muhammadiyah | Disusun Berdasarkan Keputusan Majelis Tarjih Muhammadiyah</p>
+            <p>kelompok: alma assofi, azizzah vivi safitri,windy yolanda,fya monika</p>
+            <p>Dosen pengampu Bapak dedy susanto</p>
+        </footer>
+    </div>
+
+    <script>
+        // Data tutorial shalat
+        const shalatSteps = [
+            {
+                title: "Takbiratul Ihram",
+                arabic: "الله أكبر",
+                translation: "Allahu Akbar (Allah Maha Besar)",
+                description: `<p>Takbiratul ihram adalah gerakan mengangkat kedua tangan sejajar dengan telinga sambil mengucapkan "Allahu Akbar". Ini menandai dimulainya shalat.</p>
+                <p><strong>Posisi:</strong> Berdiri tegak menghadap kiblat, pandangan lurus ke tempat sujud. Kedua tangan diangkat sejajar dengan bahu atau telinga, jari-jari direnggangkan.</p>
+                <p><strong>Hukum:</strong> Rukun shalat. Jika ditinggalkan, shalat tidak sah.</p>`,
+                audio: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+                image: "https://images.unsplash.com/photo-1560259925-8045f5e28a0a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                title: "Berdiri & Membaca Doa Iftitah",
+                arabic: "الله أكبر كبيرا والحمد لله كثيرا وسبحان الله بكرة وأصيلا",
+                translation: "Allah Maha Besar, segala puji bagi Allah dengan pujian yang banyak, Maha Suci Allah di waktu pagi dan petang",
+                description: `<p>Setelah takbiratul ihram, tangan bersedekap di dada (tangan kanan di atas tangan kiri). Membaca doa iftitah.</p>
+                <p><strong>Bacaan:</strong> Ada beberapa versi doa iftitah yang shahih. Salah satunya: "Allahu akbar kabira walhamdulillahi kathira..."</p>
+                <p><strong>Posisi:</strong> Tangan kanan menggenggam pergelangan tangan kiri, diletakkan di dada. Pandangan lurus ke tempat sujud.</p>`,
+                audio: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
+                image: "https://images.unsplash.com/photo-1604369674556-6a5c4e4a6d28?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                title: "Membaca Al-Fatihah",
+                arabic: "بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ (1) الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ (2) الرَّحْمَنِ الرَّحِيمِ (3) مَالِكِ يَوْمِ الدِّينِ (4) إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ (5) اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ (6) صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ (7)",
+                translation: "Dengan nama Allah Yang Maha Pengasih, Maha Penyayang. Segala puji bagi Allah, Tuhan seluruh alam. Yang Maha Pengasih, Maha Penyayang. Pemilik hari pembalasan. Hanya kepada Engkaulah kami menyembah dan hanya kepada Engkaulah kami mohon pertolongan. Tunjukilah kami jalan yang lurus. (yaitu) jalan orang-orang yang telah Engkau beri nikmat kepadanya; bukan (jalan) mereka yang dimurkai, dan bukan (pula jalan) mereka yang sesat.",
+                description: `<p>Membaca surat Al-Fatihah merupakan rukun shalat. Setiap rakaat wajib membaca Al-Fatihah.</p>
+                <p><strong>Cara:</strong> Membaca ta'awudz (أعوذ بالله من الشيطان الرجيم) sebelum Al-Fatihah. Membaca basmalah (بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ) sebagai ayat pertama dari Al-Fatihah.</p>
+                <p><strong>Hukum:</strong> Rukun shalat. Jika ditinggalkan, rakaat tidak sah.</p>`,
+                audio: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3",
+                image: "https://images.unsplash.com/photo-1519730722595-a5ff788dea11?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
+            }
+        ];
+        
+        let currentStep = 0;
+        const stepTitle = document.querySelector('.step-title');
+        const stepIndicator = document.querySelector('.step-indicator');
+        const stepImage = document.querySelector('.step-image');
+        const arabicText = document.querySelector('.arabic-text');
+        const translation = document.querySelector('.translation');
+        const stepDescription = document.querySelector('.step-description');
+        const audioPlayer = document.querySelector('audio');
+        const prevBtn = document.querySelector('.btn-prev');
+        const nextBtn = document.querySelector('.btn-next');
+        const stepListItems = document.querySelectorAll('.steps-list li');
+        
+        // Fungsi untuk memperbarui tampilan langkah
+        function updateStep(stepIndex) {
+            const step = shalatSteps[stepIndex];
+            
+            stepTitle.textContent = step.title;
+         stepIndicator.textContent = `Langkah ${stepIndex + 1} dari ${shalatSteps.length}`;
+            stepImage.src = step.image;
+            stepImage.alt = step.title;
+            arabicText.textContent = step.arabic;
+            translation.textContent = step.translation;
+            stepDescription.innerHTML = step.description;
+            audioPlayer.src = step.audio;
+            
+            // Perbarui status tombol navigasi
+            prevBtn.disabled = stepIndex === 0;
+            nextBtn.disabled = stepIndex === shalatSteps.length - 1;
+            
+            // Perbarui daftar langkah aktif
+            stepListItems.forEach((item, index) => {
+                item.classList.toggle('active', index === stepIndex);
+            });
+        }
+        
+        // Event listener untuk tombol next
+        nextBtn.addEventListener('click', () => {
+            if (currentStep < shalatSteps.length - 1) {
+                currentStep++;
+                updateStep(currentStep);
+            }
+        });
+        
+        // Event listener untuk tombol prev
+        prevBtn.addEventListener('click', () => {
+            if (currentStep > 0) {
+                currentStep--;
+                updateStep(currentStep);
+            }
+        });
+        
+        // Event listener untuk daftar langkah
+        stepListItems.forEach((item, index) => {
+            item.addEventListener('click', () => {
+                currentStep = index;
+                updateStep(currentStep);
+            });
+        });
+        
+        // Inisialisasi
+        updateStep(currentStep);
+    </script>
+</body>
+</html>
