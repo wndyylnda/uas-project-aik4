@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial Shalat Muhammadiyah</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap');
+
+        .arabic-text {
+            font-family: 'Amiri', serif;
+            font-size: 1.8rem;
+            line-height: 2.5rem;
+            text-align: center;
+            color: #004445;
+        }
+
+        .transliteration {
+            font-style: italic;
+            color: #666;
+            text-align: center;
+            margin: 1rem 0;
+        }
+
+        .translation {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .step-image {
+            width: 160px;
+            height: 192px;
+            margin: 2rem auto;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            border: 4px solid #faf5e4;
+        }
+
+        .instruction-box {
+            background-color: #faf5e4;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+        }
+    </style>
+</head>
+
+<body class="bg-gradient-to-br from-[#faf5e4] to-[#d4e6f1] min-h-screen p-5">
+    <div class="max-w-6xl mx-auto">
+        <header
+            class="text-center py-8 bg-gradient-to-r from-[#2c786c] to-[#004445] text-white rounded-xl shadow-lg mb-8">
+            <div class="container mx-auto px-4">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4"><i class="fas fa-mosque mr-2"></i> Tutorial Shalat
+                    Muhammadiyah</h1>
+                <p class="text-lg max-w-3xl mx-auto opacity-90 mb-6">Panduan Lengkap Shalat Menurut Tuntunan
+                    Muhammadiyah
+                </p>
+
+                <div class="flex justify-center gap-4">
+                    <a href="sholat_dewasa.html"
+                        class="px-6 py-2 bg-[#f8b400] text-white rounded-full font-bold hover:bg-[#e0a500] transition-colors">
+                        <i class="fas fa-user mr-2"></i> Untuk Dewasa
+                    </a>
+                    <a href="sholat_anak_anak.html"
+                        class="px-6 py-2 bg-white text-[#004445] rounded-full font-bold hover:bg-gray-100 transition-colors">
+                        <i class="fas fa-child mr-2"></i> Untuk Anak-anak
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <div class="flex flex-col lg:flex-row gap-8">
+            <div class="flex-1 bg-white rounded-xl p-6 shadow-xl">
+                <!-- Navigation buttons -->
+                <div class="flex justify-between mb-6">
+                    <button id="prevBtn"
+                        class="px-6 py-3 bg-gray-200 text-gray-800 rounded-full font-bold flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                        disabled>
+                        <i class="fas fa-arrow-left"></i> Sebelumnya
+                    </button>
+                    <button id="nextBtn"
+                        class="px-6 py-3 bg-[#2c786c] text-white rounded-full font-bold flex items-center gap-2 hover:bg-[#004445] transition-colors">
+                        Selanjutnya <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+
+                <!-- Prayer steps content -->
+                <div id="stepContent">
+                    <!-- Takbiratul Ihram -->
+                    <div id="takbirStep">
+                        <div class="flex justify-between items-center mb-6 pb-4 border-b-2 border-[#faf5e4]">
+                            <h2 class="text-2xl font-bold text-[#004445]">Takbiratul Ihram</h2>
+                        </div>
+
+                        <div class="flex flex-col gap-6">
+                            <img src="./1.jpg" alt="Takbiratul Ihram" class="step-image">
+
+                            <div class="arabic-text">الله أكبر</div>
+                            <div class="transliteration">Allahu Akbar</div>
+                            <p class="translation">Allah Maha Besar</p>
+
+                            <div class="instruction-box">
+                                <h4 class="font-bold text-[#004445] mb-2">Tata Cara:</h4>
+                                <ul class="list-disc pl-5 space-y-1">
+                                    <li>Mengangkat kedua tangan sejajar dengan bahu atau telinga</li>
+                                    <li>Telapak tangan menghadap kiblat</li>
+                                    <li>Jari-jari tangan direnggangkan</li>
+                                    <li>Membaca takbir dengan suara yang jelas</li>
+                                    <li>Setelah takbir, tangan diletakkan di atas dada (tangan kanan di atas tangan
+                                        kiri)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Doa Iftitah -->
+                    <div id="iftitahStep" class="hidden">
+                        <div class="mt-12 mb-8">
+                            <h2 class="text-2xl font-bold text-[#004445] mb-6">Berdiri & Membaca Doa Iftitah</h2>
+
+                            <div class="flex flex-col gap-6">
+                                <img src="./2.jpg" alt="Berdiri & Membaca Doa Iftitah" class="step-image">
+
+                                <h3 class="text-xl font-semibold text-center">Doa Iftitah</h3>
+
+                                <div class="arabic-text">
+                                    اللَّهُمَّ بَاعِدْ بَيْنِي وَبَيْنَ خَطَايَايَ ، كَمَا بَاعَدْتَ بَيْنَ المَشْرِقِ
+                                    وَالمَغْرِبِ، اللَّهُمَّ نَقِّنِي مِنَ الخَطَايَا ، كَمَا يُنَقَّى الثَّوْبُ
+                                    الأَبْيَضُ مِنَ الدَّنَسِ، اللَّهُمَّ اغْسِلْ خَطَايَايَ بِالْمَاءِ ، وَالثَّلْجِ ،
+                                    وَالبَرَدِ
+                                </div>
+                                <div class="transliteration">
+                                    Allahumma baaid baynii wa bayna khotoyaaya kamaa baa'adta baynal masyriqi wal
+                                    maghrib. Allahumma naqqinii min khotoyaaya kamaa yunaqqots tsaubul abyadhu minad
+                                    danas. Allahummagh-silnii min khotoyaaya bil maa-iwats tsalji wal barod.
+                                </div>
+                                <p class="translation">
+                                    Wahai Allah jauhkanlah antara aku dan kesalahan-kesalahanku sebagaimana engkau
+                                    jauhkan antara timur dan barat, ya Allah bersihkanlah aku dari kesalahan sebagaimana
+                                    bersihnya baju putih dari kotoran, ya Allah basuhlah kesalahan-kesalahanku dengan
+                                    air, salju dan air dingin.
+                                </p>
+
+                                <div class="instruction-box">
+                                    <h4 class="font-bold text-[#004445] mb-2">Catatan:</h4>
+                                    <ul class="list-disc pl-5 space-y-1">
+                                        <li>Doa iftitah dibaca dengan suara pelan</li>
+                                        <li>Posisi tangan tetap di atas dada (tangan kanan di atas tangan kiri)</li>
+                                        <li>Pandangan mata ke tempat sujud</li>
+                                        <li>Badan berdiri tegak dan khusyu'</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Al-Fatihah -->
+                    <div id="fatihahStep" class="hidden">
+                        <div class="mt-8">
+                            <img src="./2.jpg" alt="Membaca Al-Fatihah" class="step-image">
+                            <h3 class="text-xl font-semibold text-center mb-6">Membaca Al-Fatihah</h3>
+
+                            <div class="arabic-text">
+                                بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِاَلْحَمْدُ لِلّٰهِ رَبِّ الْعٰلَمِيْنَۙالرَّحْمٰنِ
+                                الرَّحِيْمِۙمٰلِكِ يَوْمِ الدِّيْنِۗاِيَّاكَ نَعْبُدُ وَاِيَّاكَ نَسْتَعِيْنُۗاِهْدِنَا
+                                الصِّرَاطَ الْمُسْتَقِيْمَۙصِرَاطَ الَّذِيْنَ اَنْعَمْتَ عَلَيْهِمْ ەۙ غَيْرِ
+                                الْمَغْضُوْبِ عَلَيْهِمْ وَلَا الضَّاۤلِّيْنَࣖ
+                            </div>
+                            <div class="transliteration">
+                                Bismillâhir-raḫmânir-raḫîm al-ḫamdu lillâhi rabbil-'âlamîn ar-raḫmânir-raḫîmmâliki
+                                yaumid-dîn iyyâka na'budu wa iyyâka nasta'înihdinash-shirâthal-mustaqîmshirâthalladzîna
+                                an'amta 'alaihim ghairil-maghdlûbi 'alaihim wa ladl-dlâllîn
+                            </div>
+                            <p class="translation">
+                                Dengan nama Allah Yang Maha Pengasih lagi Maha Penyayang Segala puji bagi Allah, Tuhan
+                                semesta alam Yang Maha Pengasih lagi Maha Penyayang,Pemilik hari Pembalasan. Hanya
+                                kepada Engkaulah kami menyembah dan hanya kepada Engkaulah kami memohon
+                                pertolongan.Bimbinglah kami ke jalan yang lurus,
+                                (yaitu) jalan orang-orang yang telah Engkau beri nikmat, bukan (jalan) mereka yang
+                                dimurkai dan bukan (pula jalan) orang-orang yang sesat.
+                            </p>
+
+                            <div class="instruction-box">
+                                <h4 class="font-bold text-[#004445] mb-2">Tata Cara Membaca Al-Fatihah:</h4>
+                                <ul class="list-disc pl-5 space-y-1">
+                                    <li>Membaca ta'awudz sebelum Al-Fatihah: "A'udzu billahi minasy syaithanir rajim"
+                                    </li>
+                                    <li>Membaca basmalah dengan jelas</li>
+                                    <li>Membaca dengan tartil (perlahan dan jelas)</li>
+                                    <li>Berhenti sejenak di setiap akhir ayat</li>
+                                    <li>Membaca "Amin" dengan suara pelan setelah selesai</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Surah Pendek -->
+                    <div id="surahStep" class="hidden">
+                        <div class="mt-8">
+                            <img src="./4.jpg" alt="Membaca Surah Pendek" class="step-image">
+                            <h3 class="text-xl font-semibold text-center mb-6">Membaca Surah Pendek</h3>
+
+                            <div class="arabic-text">
+                                بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ قُلْ هُوَ اللّٰهُ أَحَدٌۚ اَللّٰهُ الصَّمَدُۚ
+                                لَمْ يَلِدْ وَلَمْ يُوْلَدْۙ وَلَمْ يَكُنْ لَّهٗ كُفُوًا أَحَدٌۢ
+                            </div>
+                            <div class="transliteration">
+                                Bismillâhir-raḫmânir-raḫîm. Qul huwallâhu aḥad. Allâhuṣ-ṣamad. Lam yalid wa lam yûlad.
+                                Wa lam yakul lahû kufuwan aḥad.
+                            </div>
+                            <p class="translation">
+                                Dengan nama Allah Yang Maha Pengasih lagi Maha Penyayang. Katakanlah (Muhammad), "Dialah
+                                Allah, Yang Maha Esa. Allah tempat meminta segala sesuatu. (Allah) tidak beranak dan
+                                tidak pula diperanakkan. Dan tidak ada sesuatu yang setara dengan Dia."
+                            </p>
+
+                            <div class="instruction-box">
+                                <h4 class="font-bold text-[#004445] mb-2">Tata Cara Membaca Surah:</h4>
+                                <ul class="list-disc pl-5 space-y-1">
+                                    <li>Disunnahkan membaca basmalah sebelum surah</li>
+                                    <li>Membaca dengan tartil dan khusyu'</li>
+                                    <li>Pada rakaat pertama dan kedua membaca surah setelah Al-Fatihah</li>
+                                    <li>Pada rakaat ketiga dan keempat cukup membaca Al-Fatihah saja</li>
+                                    <li>Boleh membaca surah apa saja dari Al-Qur'an</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ruku' -->
+                    <div id="rukuStep" class="hidden">
+                        <div class="mt-8">
+                            <img src="./5.jpg" alt="Ruku'" class="step-image">
+                            <h3 class="text-xl font-semibold text-center mb-6">Ruku'</h3>
+
+                            <div class="arabic-text">
+                                سُبْحَانَ رَبِّيَ الْعَظِيمِ وَبِحَمْدِهِ
+                            </div>
+                            <div class="transliteration">
+                                Subhâna rabbiyal-'aẓîmi wa biḥamdih
+                            </div>
+                            <p class="translation">
+                                Maha Suci Tuhanku Yang Maha Agung dan dengan memuji-Nya
+                            </p>
+
+                            <div class="instruction-box">
+                                <h4 class="font-bold text-[#004445] mb-2">Tata Cara Ruku':</h4>
+                                <ul class="list-disc pl-5 space-y-1">
+                                    <li>Mengangkat tangan sambil bertakbir "Allahu Akbar"</li>
+                                    <li>Membungkukkan badan hingga punggung rata</li>
+                                    <li>Meletakkan tangan di lutut dengan jari direnggangkan</li>
+                                    <li>Kepala sejajar dengan punggung (tidak terlalu menunduk atau mendongak)</li>
+                                    <li>Membaca tasbih ruku' minimal 3 kali</li>
+                                    <li>Pandangan mata ke tempat sujud</li>
+                                    <li>Kaki tegak dan tidak ditekuk</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- I'tidal -->
+                    <div id="i'tidalStep" class="hidden">
+                        <div class="mt-8">
+                            <img src="./6.jpg" alt="I'tidal" class="step-image">
+                            <h3 class="text-xl font-semibold text-center mb-6">I'tidal (Berdiri dari Ruku')</h3>
+
+                            <div class="arabic-text">
+                                سَمِعَ اللَّهُ لِمَنْ حَمِدَهُ
+                            </div>
+                            <div class="transliteration">
+                                Sami'allâhu li man ḥamidah
+                            </div>
+                            <p class="translation">
+                                Allah mendengar orang yang memuji-Nya
+                            </p>
+
+                            <div class="arabic-text mt-6">
+                                رَبَّنَا وَلَكَ الْحَمْدُ
+                            </div>
+                            <div class="transliteration">
+                                Rabbana wa lakal-ḥamd
+                            </div>
+                            <p class="translation">
+                                Ya Tuhan kami, bagi-Mu segala puji
+                            </p>
+
+                            <div class="instruction-box">
+                                <h4 class="font-bold text-[#004445] mb-2">Tata Cara I'tidal:</h4>
+                                <ul class="list-disc pl-5 space-y-1">
+                                    <li>Mengangkat badan dari ruku' sambil mengangkat tangan</li>
+                                    <li>Membaca "Sami'allahu liman hamidah" saat mengangkat badan</li>
+                                    <li>Setelah berdiri tegak membaca "Rabbana wa lakal hamd"</li>
+                                    <li>Berdiri tegak hingga tulang-tulang kembali pada tempatnya</li>
+                                    <li>Tangan kembali ke posisi di atas dada</li>
+                                    <li>Pandangan ke tempat sujud</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sujud -->
+                    <div id="sujudStep" class="hidden">
+                        <div class="mt-8">
+                            <img src="./7.jpg" alt="Sujud" class="step-image">
+                            <h3 class="text-xl font-semibold text-center mb-6">Sujud</h3>
+
+                            <div class="arabic-text">
+                                سُبْحَانَ رَبِّيَ الْأَعْلَىٰ وَبِحَمْدِهِ
+                            </div>
+                            <div class="transliteration">
+                                Subhâna rabbiyal-a'lâ wa biḥamdih
+                            </div>
+                            <p class="translation">
+                                Maha Suci Tuhanku Yang Maha Tinggi dan dengan memuji-Nya
+                            </p>
+
+                            <div class="instruction-box">
+                                <h4 class="font-bold text-[#004445] mb-2">Tata Cara Sujud:</h4>
+                                <ul class="list-disc pl-5 space-y-1">
+                                    <li>Turun untuk sujud sambil bertakbir tanpa mengangkat tangan</li>
+                                    <li>Meletakkan kedua lutut terlebih dahulu, kemudian tangan, lalu dahi</li>
+                                    <li>7 anggota sujud menyentuh tanah: dahi (termasuk hidung), kedua telapak tangan,
+                                        kedua lutut, dan ujung kedua kaki</li>
+                                    <li>Jari-jari tangan dirapatkan dan diarahkan ke kiblat</li>
+                                    <li>Lengan tidak menempel ke badan dan tidak terlalu diregangkan</li>
+                                    <li>Membaca tasbih sujud minimal 3 kali</li>
+                                    <li>Paha tidak menempel ke perut</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Duduk antara dua sujud -->
+                    <div id="dudukAntaraSujudStep" class="hidden">
+                        <div class="mt-8">
+                            <img src="./8.jpg" alt="Duduk antara dua sujud" class="step-image">
+                            <h3 class="text-xl font-semibold text-center mb-6">Duduk antara Dua Sujud</h3>
+
+                            <div class="arabic-text">
+                                رَبِّ اغْفِرْ لِي وَارْحَمْنِي وَاجْبُرْنِي وَارْفَعْنِي وَارْزُقْنِي وَاهْدِنِي
+                                وَعَافِنِي وَاعْفُ عَنِّي
+                            </div>
+                            <div class="transliteration">
+                                Rabbighfir lî, warḥamnî, wajburnî, warfa'nî, warzuqnî, wahdinî, wa 'âfinî, wa'fu 'annî
+                            </div>
+                            <p class="translation">
+                                Ya Tuhanku, ampunilah aku, rahmatilah aku, cukupkanlah aku, angkatlah derajatku, berilah
+                                rezeki kepadaku, berilah aku petunjuk, berilah kesehatan kepadaku dan ampunilah aku
+                            </p>
+
+                            <div class="instruction-box">
+                                <h4 class="font-bold text-[#004445] mb-2">Tata Cara Duduk antara Dua Sujud:</h4>
+                                <ul class="list-disc pl-5 space-y-1">
+                                    <li>Bangun dari sujud pertama sambil bertakbir</li>
+                                    <li>Duduk iftirasy (duduk di atas kaki kiri, kaki kanan ditegakkan)</li>
+                                    <li>Telapak tangan di atas paha/paha dekat lutut</li>
+                                    <li>Membaca doa di antara dua sujud</li>
+                                    <li>Lama duduk kira-kira sama dengan lama sujud</li>
+                                    <li>Pandangan ke tempat sujud</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tasyahud Awal -->
+                    <div id="tahiyatAwalStep" class="hidden">
+                        <div class="mt-8">
+                            <img src="./9.jpg" alt="Tasyahud Awal" class="step-image">
+                            <h3 class="text-xl font-semibold text-center mb-6">Tasyahud Awal</h3>
+
+                            <div class="arabic-text">
+                                التَّحِيَّاتُ لِلَّهِ وَالصَّلَوَاتُ وَالطَّيِّبَاتُ، السَّلَامُ عَلَيْكَ أَيُّهَا
+                                النَّبِيُّ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ، السَّلَامُ عَلَيْنَا وَعَلَى عِبَادِ
+                                اللَّهِ الصَّالِحِينَ، أَشْهَدُ أَنْ لَا إِلَهَ إِلَّا اللَّهُ وَأَشْهَدُ أَنَّ
+                                مُحَمَّدًا عَبْدُهُ وَرَسُولُهُ
+                            </div>
+                            <div class="transliteration">
+                                At-taḥiyyâtu lillâhi waṣ-ṣalawâtu waṭ-ṭayyibât. As-salâmu 'alaika ayyuhan-nabiyyu wa
+                                raḥmatullâhi wa barakâtuh. As-salâmu 'alainâ wa 'alâ 'ibâdillâhiṣ-ṣâliḥîn. Asyhadu an lâ
+                                ilâha illallâh wa asyhadu anna Muḥammadan 'abduhû wa rasûluh.
+                            </div>
+                            <p class="translation">
+                                Segala penghormatan, shalawat dan kebaikan hanya milik Allah. Semoga keselamatan, rahmat
+                                Allah dan berkah-Nya tercurah kepadamu wahai Nabi. Semoga keselamatan tercurah kepada
+                                kami dan hamba-hamba Allah yang shaleh. Aku bersaksi bahwa tidak ada Tuhan yang berhak
+                                disembah selain Allah dan aku bersaksi bahwa Muhammad adalah hamba dan utusan-Nya.
+                            </p>
+
+                            <div class="instruction-box">
+                                <h4 class="font-bold text-[#004445] mb-2">Tata Cara Tasyahud Awal:</h4>
+                                <ul class="list-disc pl-5 space-y-1">
+                                    <li>Duduk iftirasy (seperti duduk antara dua sujud)</li>
+                                    <li>Tangan kanan di atas paha kanan dengan jari menggenggam kecuali telunjuk</li>
+                                    <li>Tangan kiri di atas paha kiri dengan jari-jari terbuka</li>
+                                    <li>Menggerakkan telunjuk kanan saat membaca "Asyhadu an la ilaha illallah"</li>
+                                    <li>Membaca tasyahud dengan tartil dan khusyu'</li>
+                                    <li>Pada shalat 3 atau 4 rakaat, langsung berdiri setelah tasyahud awal</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tasyahud Akhir -->
+                    <div id="tahiyatAkhirStep" class="hidden">
+                        <div class="mt-8">
+                            <img src="./10.jpg" alt="Tasyahud Akhir" class="step-image">
+                            <h3 class="text-xl font-semibold text-center mb-6">Tasyahud Akhir & Shalawat</h3>
+
+                            <div class="arabic-text">
+                                اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ، كَمَا صَلَّيْتَ عَلَى
+                                إِبْرَاهِيمَ وَعَلَى آلِ إِبْرَاهِيمَ، إِنَّكَ حَمِيدٌ مَجِيدٌ، اللَّهُمَّ بَارِكْ عَلَى
+                                مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ، كَمَا بَارَكْتَ عَلَى إِبْرَاهِيمَ وَعَلَى آلِ
+                                إِبْرَاهِيمَ، إِنَّكَ حَمِيدٌ مَجِيدٌ
+                            </div>
+                            <div class="transliteration">
+                                Allâhumma ṣalli 'alâ Muḥammadin wa 'alâ âli Muḥammad, kamâ ṣallaita 'alâ Ibrâhîma wa
+                                'alâ âli Ibrâhîma, innaka ḥamîdum majîd. Allâhumma bârik 'alâ Muḥammadin wa 'alâ âli
+                                Muḥammad, kamâ bârakta 'alâ Ibrâhîma wa 'alâ âli Ibrâhîma, innaka ḥamîdum majîd.
+                            </div>
+                            <p class="translation">
+                                Ya Allah, limpahkanlah rahmat kepada Muhammad dan keluarga Muhammad, sebagaimana Engkau
+                                telah melimpahkan rahmat kepada Ibrahim dan keluarga Ibrahim. Sesungguhnya Engkau Maha
+                                Terpuji lagi Maha Mulia. Ya Allah, limpahkanlah berkah kepada Muhammad dan keluarga
+                                Muhammad, sebagaimana Engkau telah melimpahkan berkah kepada Ibrahim dan keluarga
+                                Ibrahim. Sesungguhnya Engkau Maha Terpuji lagi Maha Mulia.
+                            </p>
+
+                            <div class="instruction-box">
+                                <h4 class="font-bold text-[#004445] mb-2">Tata Cara Tasyahud Akhir:</h4>
+                                <ul class="list-disc pl-5 space-y-1">
+                                    <li>Duduk tawarruk (duduk dengan pantat di lantai, kaki kiri keluar dari bawah kaki
+                                        kanan)</li>
+                                    <li>Posisi tangan sama seperti tasyahud awal</li>
+                                    <li>Membaca tasyahud seperti pada tasyahud awal</li>
+                                    <li>Ditambah dengan membaca shalawat Nabi</li>
+                                    <li>Bisa ditambah dengan doa sebelum salam</li>
+                                    <li>Telunjuk tetap digerakkan saat membaca syahadat</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Salam -->
+                    <div id="salamStep" class="hidden">
+                        <div class="mt-8">
+                            <img src="./11.jpg" alt="Salam" class="step-image">
+                            <h3 class="text-xl font-semibold text-center mb-6">Salam</h3>
+
+                            <div class="arabic-text">
+                                السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللَّهِ
+                            </div>
+                            <div class="transliteration">
+                                As-salâmu 'alaikum wa raḥmatullâh
+                            </div>
+                            <p class="translation">
+                                Semoga keselamatan dan rahmat Allah tercurah kepadamu
+                            </p>
+
+                            <div class="instruction-box">
+                                <h4 class="font-bold text-[#004445] mb-2">Tata Cara Salam:</h4>
+                                <ul class="list-disc pl-5 space-y-1">
+                                    <li>Menoleh ke kanan sambil mengucapkan salam pertama</li>
+                                    <li>Menoleh ke kiri sambil mengucapkan salam kedua</li>
+                                    <li>Pandangan mengikuti arah menoleh</li>
+                                    <li>Disunnahkan membaca doa setelah salam</li>
+                                    <li>Shalat telah selesai dengan salam kedua</li>
+                                </ul>
+                            </div>
+
+                            <div class="mt-8 p-6 bg-green-50 rounded-xl border border-green-200">
+                                <h3 class="text-xl font-bold text-center text-green-800 mb-4">Selamat! Anda telah
+                                    menyelesaikan Shalat</h3>
+                                <p class="text-center text-green-700">Setelah salam, disunnahkan untuk berdzikir dan
+                                    berdoa sesuai dengan tuntunan Rasulullah ﷺ</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="lg:w-80 bg-white rounded-xl p-6 shadow-xl">
+                <h3 class="text-xl font-bold text-[#004445] mb-5 pb-3 border-b-2 border-[#faf5e4]">Tentang Shalat
+                    Muhammadiyah</h3>
+                <div class="space-y-4">
+                    <p>Shalat menurut Muhammadiyah mengikuti tuntunan Rasulullah ﷺ berdasarkan dalil-dalil shahih dari
+                        Al-Qur'an dan As-Sunnah.</p>
+                    <p><strong class="font-bold">Karakteristik Utama:</strong></p>
+                    <ul class="list-disc pl-5 space-y-2">
+                        <li>Mengangkat tangan saat takbir (takbiratul ihram, ruku', dan bangun dari ruku')</li>
+                        <li>Meletakkan tangan di atas dada saat berdiri</li>
+                        <li>Membaca doa iftitah</li>
+                        <li>Membaca ta'awudz sebelum Al-Fatihah</li>
+                        <li>Tidak mengeraskan bacaan amin</li>
+                        <li>Tidak membaca qunut pada shalat Subuh</li>
+                        <li>Menggenggam jari tangan kanan saat tasyahud kecuali telunjuk</li>
+                        <li>Duduk iftirasy (pada tasyahud awal) dan tawarruk (pada tasyahud akhir)</li>
+                        <li>Tidak mengangkat tangan saat berdoa qunut (kecuali dalam shalat witir)</li>
+                    </ul>
+
+                    <div class="mt-6 pt-4 border-t-2 border-[#faf5e4]">
+                        <h4 class="font-bold text-[#004445] mb-2">Jumlah Rakaat Shalat Wajib:</h4>
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li>Subuh: 2 rakaat</li>
+                            <li>Dzuhur: 4 rakaat</li>
+                            <li>Ashar: 4 rakaat</li>
+                            <li>Maghrib: 3 rakaat</li>
+                            <li>Isya: 4 rakaat</li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-6 pt-4 border-t-2 border-[#faf5e4]">
+                        <h4 class="font-bold text-[#004445] mb-2">Sumber Rujukan:</h4>
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li>Al-Qur'an dan Hadits Shahih</li>
+                            <li>Kitab Fiqh Muhammadiyah oleh Majelis Tarjih</li>
+                            <li>Pedoman Shalat Menurut Muhammadiyah</li>
+                            <li>Keputusan Muktamar Muhammadiyah</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="text-center py-8 mt-10 text-[#004445]">
+            <p>&copy; 2025 Tutorial Shalat Muhammadiyah | Disusun Berdasarkan Keputusan Majelis Tarjih Muhammadiyah</p>
+            <p class="mt-2">Kelompok: Alma Assofi, Azizzah Vivi Safitri, Windy Yolanda, Fya Monika</p>
+            <p class="mt-1">Dosen pengampu Bapak Dedy Susanto</p>
+        </footer>
+    </div>
+
+    <script>
+        // Daftar langkah-langkah shalat
+        const steps = [
+            'takbirStep',
+            'iftitahStep',
+            'fatihahStep',
+            'surahStep',
+            'rukuStep',
+            'i\'tidalStep',
+            'sujudStep',
+            'dudukAntaraSujudStep',
+            'tahiyatAwalStep',
+            'tahiyatAkhirStep',
+            'salamStep'
+        ];
+
+        let currentStep = 0;
+
+        // Elemen DOM
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+
+        // Fungsi untuk menampilkan langkah saat ini
+        function showCurrentStep() {
+            // Sembunyikan semua langkah
+            steps.forEach(step => {
+                document.getElementById(step).classList.add('hidden');
+            });
+
+            // Tampilkan langkah saat ini
+            document.getElementById(steps[currentStep]).classList.remove('hidden');
+
+            // Perbarui status tombol navigasi
+            prevBtn.disabled = currentStep === 0;
+
+            // Ubah teks tombol next jika di langkah terakhir
+            if (currentStep === steps.length - 1) {
+                nextBtn.innerHTML = '<i class="fas fa-check-circle"></i> Selesai';
+                nextBtn.classList.remove('bg-[#2c786c]', 'hover:bg-[#004445]');
+                nextBtn.classList.add('bg-green-600', 'hover:bg-green-700');
+            } else {
+                nextBtn.innerHTML = 'Selanjutnya <i class="fas fa-arrow-right"></i>';
+                nextBtn.classList.remove('bg-green-600', 'hover:bg-green-700');
+                nextBtn.classList.add('bg-[#2c786c]', 'hover:bg-[#004445]');
+            }
+        }
+
+        // Event listener untuk tombol next
+        nextBtn.addEventListener('click', () => {
+            if (currentStep < steps.length - 1) {
+                currentStep++;
+                showCurrentStep();
+
+                // Scroll ke atas konten
+                document.getElementById('stepContent').scrollIntoView({ behavior: 'smooth' });
+            } else {
+                // Aksi ketika sudah selesai
+                alert('Anda telah menyelesaikan tutorial shalat Muhammadiyah! Semoga bermanfaat.');
+            }
+        });
+
+        // Event listener untuk tombol prev
+        prevBtn.addEventListener('click', () => {
+            if (currentStep > 0) {
+                currentStep--;
+                showCurrentStep();
+
+                // Scroll ke atas konten
+                document.getElementById('stepContent').scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+
+        // Inisialisasi
+        showCurrentStep();
+    </script>
+</body>
+
+</html>
