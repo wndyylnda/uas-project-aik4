@@ -45,6 +45,12 @@
             padding: 1.5rem;
             margin-top: 1.5rem;
         }
+
+        .step-video {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
     </style>
 </head>
 
@@ -95,8 +101,9 @@
                             <h2 class="text-2xl font-bold text-[#004445]">Takbiratul Ihram</h2>
                         </div>
 
-                        <div class="flex flex-col gap-6">
-                            <video controls class="step-video"><source src="./1.mp4" type="video/mp4">Browser Anda tidak mendukung video.</video>
+                       <div class="flex flex-col mx-auto gap-6"><video controls class="w-full aspect-video" height="auto">
+                        <source src="./d1.mp4" type="video/mp4">
+                            Browser Anda tidak mendukung video.</video>
 
 
                             <div class="arabic-text">الله أكبر</div>
@@ -121,9 +128,12 @@
                     <div id="iftitahStep" class="hidden">
                         <div class="mt-12 mb-8">
                             <h2 class="text-2xl font-bold text-[#004445] mb-6">Berdiri & Membaca Doa Iftitah</h2>
+                        <div class="flex justify-between items-center mb-6 pb-4 border-b-2 border-[#faf5e4]">
+                        </div>
 
-                            <div class="flex flex-col gap-6">
-                                <img src="./2.jpg" alt="Berdiri & Membaca Doa Iftitah" class="step-image">
+                       <div class="flex flex-col mx-auto gap-6"><video controls class="w-full aspect-video" height="auto">
+                        <source src="./d2.mp4" type="video/mp4">
+                            Browser Anda tidak mendukung video.</video>
 
                                 <h3 class="text-xl font-semibold text-center">Doa Iftitah</h3>
 
@@ -160,8 +170,11 @@
 
                     <!-- Al-Fatihah -->
                     <div id="fatihahStep" class="hidden">
-                        <div class="mt-8">
-                            <img src="./2.jpg" alt="Membaca Al-Fatihah" class="step-image">
+                       <div class="mt-8">
+                            <h2 class="text-2xl font-bold text-[#004445] mb-6">Membaca Al-Fatihah</h2>
+                            <video controls class="w-full aspect-video" height="auto">
+                                <source src="./d3.mp4" type="video/mp4">
+                                Browser Anda tidak mendukung video.</video>
                             <h3 class="text-xl font-semibold text-center mb-6">Membaca Al-Fatihah</h3>
 
                             <div class="arabic-text">
@@ -201,22 +214,24 @@
                     <!-- Surah Pendek -->
                     <div id="surahStep" class="hidden">
                         <div class="mt-8">
-                            <img src="./4.jpg" alt="Membaca Surah Pendek" class="step-image">
+                            <h2 class="text-2xl font-bold text-[#004445] mb-6">Membaca Surah Pendek</h2>
+                             <video controls class="w-full aspect-video" height="auto">
+                                <source src="./d4.mp4" type="video/mp4">
+                                Browser Anda tidak mendukung video.</video>
                             <h3 class="text-xl font-semibold text-center mb-6">Membaca Surah Pendek</h3>
 
                             <div class="arabic-text">
-                                بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ قُلْ هُوَ اللّٰهُ أَحَدٌۚ اَللّٰهُ الصَّمَدُۚ
-                                لَمْ يَلِدْ وَلَمْ يُوْلَدْۙ وَلَمْ يَكُنْ لَّهٗ كُفُوًا أَحَدٌۢ
+                                أَرَأَيْتَ الَّذِي يُكَذِّبُ بِالدِّينِفَذَٰلِكَ الَّذِي يَدُعُّ الْيَتِيمَوَلَا يَحُضُّ عَلَىٰ طَعَامِ الْمِسْكِينِفَوَيْلٌ لِّلْمُصَلِّينَ
+                                الَّذِينَ هُمْ عَن صَلَاتِهِمْ سَاهُونَالَّذِينَ هُمْ يُرَاءُونَ
                             </div>
                             <div class="transliteration">
-                                Bismillâhir-raḫmânir-raḫîm. Qul huwallâhu aḥad. Allâhuṣ-ṣamad. Lam yalid wa lam yûlad.
-                                Wa lam yakul lahû kufuwan aḥad.
+                                Bismillâhir-raḫmânir-raḫîm. A-ra'aytallażī yukadzdzibu bid-dīn.Fażālikal-lażī yadu‘‘ul-yatīm.Wa lā yaḥuḍḍu ‘alā ṭa‘āmil-miskīn.
+                                Fa wailul-lil-muṣallīn.Allażīna hum ‘an ṣalātihim sāhūn.Allażīna hum yurā`ūn.Wa yamna‘ūnal-mā‘ūn.
                             </div>
                             <p class="translation">
-                                Dengan nama Allah Yang Maha Pengasih lagi Maha Penyayang. Katakanlah (Muhammad), "Dialah
-                                Allah, Yang Maha Esa. Allah tempat meminta segala sesuatu. (Allah) tidak beranak dan
-                                tidak pula diperanakkan. Dan tidak ada sesuatu yang setara dengan Dia."
-                            </p>
+                                Dengan nama Allah Yang Maha Pengasih lagi Maha Penyayang. Tahukah kamu (orang) yang mendustakan agama?Itulah orang yang menghardik anak yatim,
+                                Dan tidak menganjurkan memberi makan orang miskin.Maka celakalah orang-orang yang shalat,
+                                Yaitu orang-orang yang lalai terhadap shalatnya,Yang berbuat riya (pamer),Dan enggan (menolong) dengan barang berguna.
 
                             <div class="instruction-box">
                                 <h4 class="font-bold text-[#004445] mb-2">Tata Cara Membaca Surah:</h4>
@@ -234,7 +249,10 @@
                     <!-- Ruku' -->
                     <div id="rukuStep" class="hidden">
                         <div class="mt-8">
-                            <img src="./5.jpg" alt="Ruku'" class="step-image">
+                            <h2 class="text-2xl font-bold text-[#004445] mb-6">Ruku'</h2>
+                            <video controls class="w-full aspect-video" height="auto">
+                                <source src="./d5.mp4" type="video/mp4">
+                                Browser Anda tidak mendukung video.</video>
                             <h3 class="text-xl font-semibold text-center mb-6">Ruku'</h3>
 
                             <div class="arabic-text">
@@ -265,7 +283,10 @@
                     <!-- I'tidal -->
                     <div id="i'tidalStep" class="hidden">
                         <div class="mt-8">
-                            <img src="./6.jpg" alt="I'tidal" class="step-image">
+                            <h2 class="text-2xl font-bold text-[#004445] mb-6">I'tidal (Berdiri dari Ruku')</h2>
+                            <video controls class="w-full aspect-video" height="auto">
+                                <source src="./d6.mp4" type="video/mp4">
+                                Browser Anda tidak mendukung video.</video>
                             <h3 class="text-xl font-semibold text-center mb-6">I'tidal (Berdiri dari Ruku')</h3>
 
                             <div class="arabic-text">
@@ -304,10 +325,13 @@
 
                     <!-- Sujud -->
                     <div id="sujudStep" class="hidden">
-                        <div class="mt-8">
-                            <img src="./7.jpg" alt="Sujud" class="step-image">
-                            <h3 class="text-xl font-semibold text-center mb-6">Sujud</h3>
-
+                         <div class="mt-8">
+                             <h2 class="text-2xl font-bold text-[#004445] mb-6">Sujud</h2>
+                            <video controls class="w-full aspect-video" height="auto">
+                                <source src="./d7.mp4" type="video/mp4">
+                                Browser Anda tidak mendukung video.</video>
+                                <h3 class="text-xl font-semibold text-center mb-6">Sujud</h3>
+                                
                             <div class="arabic-text">
                                 سُبْحَانَ رَبِّيَ الْأَعْلَىٰ وَبِحَمْدِهِ
                             </div>
@@ -337,7 +361,10 @@
                     <!-- Duduk antara dua sujud -->
                     <div id="dudukAntaraSujudStep" class="hidden">
                         <div class="mt-8">
-                            <img src="./8.jpg" alt="Duduk antara dua sujud" class="step-image">
+                            <h2 class="text-2xl font-bold text-[#004445] mb-6">Duduk antara Dua Sujud</h2>
+                             <video controls class="w-full aspect-video" height="auto">
+                                <source src="./d8.mp4" type="video/mp4">
+                                Browser Anda tidak mendukung video.</video>
                             <h3 class="text-xl font-semibold text-center mb-6">Duduk antara Dua Sujud</h3>
 
                             <div class="arabic-text">
@@ -369,7 +396,10 @@
                     <!-- Tasyahud Awal -->
                     <div id="tahiyatAwalStep" class="hidden">
                         <div class="mt-8">
-                            <img src="./9.jpg" alt="Tasyahud Awal" class="step-image">
+                            <h2 class="text-2xl font-bold text-[#004445] mb-6">Tasyahud Awal</h2>
+                            <video controls class="w-full aspect-video" height="auto">
+                                <source src="./d9.mp4" type="video/mp4">
+                                Browser Anda tidak mendukung video.</video>
                             <h3 class="text-xl font-semibold text-center mb-6">Tasyahud Awal</h3>
 
                             <div class="arabic-text">
@@ -406,8 +436,11 @@
 
                     <!-- Tasyahud Akhir -->
                     <div id="tahiyatAkhirStep" class="hidden">
-                        <div class="mt-8">
-                            <img src="./10.jpg" alt="Tasyahud Akhir" class="step-image">
+                       <div class="mt-8">
+                            <h2 class="text-2xl font-bold text-[#004445] mb-6">Tasyahud Akhir & Shalawat</h2>
+                            <video controls class="w-full aspect-video" height="auto">
+                                <source src="./d10.mp4" type="video/mp4">
+                                Browser Anda tidak mendukung video.</video>
                             <h3 class="text-xl font-semibold text-center mb-6">Tasyahud Akhir & Shalawat</h3>
 
                             <div class="arabic-text">
@@ -420,6 +453,7 @@
                                 Allâhumma ṣalli 'alâ Muḥammadin wa 'alâ âli Muḥammad, kamâ ṣallaita 'alâ Ibrâhîma wa
                                 'alâ âli Ibrâhîma, innaka ḥamîdum majîd. Allâhumma bârik 'alâ Muḥammadin wa 'alâ âli
                                 Muḥammad, kamâ bârakta 'alâ Ibrâhîma wa 'alâ âli Ibrâhîma, innaka ḥamîdum majîd.
+                                Allāhumma innī a‘ūdzu bika min ‘adzābi jahannam, wa min ‘adzābil-qabr, wa min fitnatil-maḥyā wal-mamāt, wa min sharri fitnatil-masīḥid-dajjāl.
                             </div>
                             <p class="translation">
                                 Ya Allah, limpahkanlah rahmat kepada Muhammad dan keluarga Muhammad, sebagaimana Engkau
@@ -427,6 +461,8 @@
                                 Terpuji lagi Maha Mulia. Ya Allah, limpahkanlah berkah kepada Muhammad dan keluarga
                                 Muhammad, sebagaimana Engkau telah melimpahkan berkah kepada Ibrahim dan keluarga
                                 Ibrahim. Sesungguhnya Engkau Maha Terpuji lagi Maha Mulia.
+                                Ya Allah, sesungguhnya aku berlindung kepada-Mu dari azab neraka Jahannam, dari azab kubur, 
+                                dari fitnah kehidupan dan kematian, dan dari kejahatan fitnah Al-Masih Ad-Dajjal.
                             </p>
 
                             <div class="instruction-box">
@@ -446,8 +482,11 @@
 
                     <!-- Salam -->
                     <div id="salamStep" class="hidden">
-                        <div class="mt-8">
-                            <img src="./11.jpg" alt="Salam" class="step-image">
+                         <div class="mt-8">
+                            <h2 class="text-2xl font-bold text-[#004445] mb-6">Salam</h2>
+                            <video controls class="w-full aspect-video" height="auto">
+                                <source src="./d11.mp4" type="video/mp4">
+                                Browser Anda tidak mendukung video.</video>
                             <h3 class="text-xl font-semibold text-center mb-6">Salam</h3>
 
                             <div class="arabic-text">
@@ -528,8 +567,8 @@
 
         <footer class="text-center py-8 mt-10 text-[#004445]">
             <p>&copy; 2025 Belajar Shalat Muhammadiyah | Disusun Berdasarkan Keputusan Majelis Tarjih Muhammadiyah</p>
-            <p class="mt-2">Kelompok: Alma Assofi, Azizzah Vivi Safitri, Windy Yolanda, Fya Monika</p>
-            <p class="mt-1">Dosen pengampu Bapak Dedy Susanto</p>
+            <p class="mt-2">Kelompok: Alma Assofi, Aziizah Vivi Safitri, Windy Yolanda, Fya Monika</p>
+            <p class="mt-1">Dosen pengampu Bapak Dedy Susanto S.Pd.I.,MM.</p>
         </footer>
     </div>
 
